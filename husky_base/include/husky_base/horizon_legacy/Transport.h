@@ -174,7 +174,6 @@ namespace clearpath
     void printCounters(std::ostream &stream = std::cout);
   };
 
-}; // namespace clearpath
+} // namespace clearpath
 
 #endif // CLEARPATH_TRANSPORT_H
-

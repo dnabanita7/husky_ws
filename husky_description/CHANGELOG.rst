@@ -2,54 +2,54 @@
 Changelog for package husky_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.4.13 (2022-11-25)
--------------------
-* Added Wibotic mesh and STL
-* Contributors: Luis Camero
-
-0.4.12 (2022-01-17)
--------------------
-
-0.4.11 (2022-01-14)
--------------------
-* Added UST10 mesh
-* Added Hokuyo UST10.
-* [husky_description] Fixed malformed STL warning for top_plate.stl.
-* Contributors: Luis Camero, Tony Baltovski
-
-0.4.10 (2021-07-18)
--------------------
-* cpr urdf extras
-* Contributors: Ebrahim Shahrivar
-
-0.4.9 (2021-07-15)
-------------------
-* Remove the need to explicitly specify the laser_enabled, realsense_enabled, and urdf_extras arguments; use the envars to make it easier to simulate customized robots & use the moveit setup assistant.
-* Update intel_realsense.urdf.xacro
-  modify image format in sim to avoid log warn spam
-* Contributors: Chris Iverach-Brereton, vamshi konduri
-
-0.4.8 (2021-04-01)
+1.0.8 (2022-05-19)
 ------------------
 
-0.4.7 (2021-03-16)
+1.0.7 (2022-05-19)
 ------------------
-* Add HUSKY\_{FRONT|REAR}_BUMPER envars we can use to completely turn off the front & rear bumpers.  This is requested to make integration of the wireless charging docks easier
-* Contributors: Chris Iverach-Brereton
+* Renamed all launch files to *.launch.py.
+* Contributors: Tony Baltovski
 
-0.4.6 (2021-03-09)
+1.0.6 (2022-05-18)
 ------------------
-* Add VLP16, secondary LMS1xx support (`#164 <https://github.com/husky/husky/issues/164>`_)
-  * Minimal refactor to add VLP16 + secondary LMS1xx support. Update defaults for the laser_enabled and realsense_enabled args to refer to the underlying envars to improve consistency when launching simulations. Modify the sensor bar to allow it to be positioned in the center by default, but with configurable xyz and rpy offsets
-  * Add the new run dependencies
-  * Remove the prefix's trailing underscore in the vlp16 mount to make it consistent. Fix an inconsistent envar for the sensor arch, add an arg to explicitly enable it, to stay internally consistent with the rest of Husky.
-  * Fix the envars; its just HUSKY_LMS1XX, not HUSKY_LASER_LMS1XX
-  * Revert to enabling the main laser by default in the simulations, add the velodyne_gazebo_plugins dependency
-* Add the ability to add the sensor bar with an envar without adding the realsense.  Add the sensor bar height as another arg + envar, fix the URDF when the 300mm sensorbar is enabled.
-* Contributors: Chris I-B, Chris Iverach-Brereton
 
-0.4.5 (2020-10-01)
+1.0.5 (2022-05-05)
 ------------------
+* Switched to gazebo_plugins for IMU and GPS.
+* [husky_description] Fixed malformed stl.
+* Initial accessories launch file.
+* Contributors: Tony Baltovski
+
+1.0.4 (2022-03-15)
+------------------
+* Update Python launch files suffix from .launch.py to _launch.py to follow standard
+* Merge pull request `#191 <https://github.com/husky/husky/issues/191>`_ from StoglRobotics-forks/gazebo-sim-integration-fixes
+  Gazebo sim integration fixes
+* Contributors: Tony Baltovski, jyang-cpr
+
+1.0.3 (2021-11-30)
+------------------
+
+1.0.2 (2021-11-16)
+------------------
+* Removed unused parameters.
+* Contributors: Tony Baltovski
+
+1.0.1 (2021-11-12)
+------------------
+* [husky_description] Removed testing.
+* Contributors: Tony Baltovski
+
+1.0.0 (2021-11-07)
+------------------
+* Initial Gazebo Classic changes.
+* [husky_description] Updated serial port.
+* Updates to use ros2_control.
+* Initial attempt at ros2_control.
+* Update husky.urdf.xacro (`#169 <https://github.com/husky/husky/issues/169>`_)
+  Fix Failed to build tree: child link [base_laser_mount] of joint [laser_mount_joint] not found error.
+  As found on https://answers.ros.org/question/354219/failed-to-build-tree-child-link-base_laser_mount-of-joint-laser_mount_joint-not-found/
+* Contributors: Guido Sanchez, Tony Baltovski
 
 0.4.4 (2020-08-13)
 ------------------

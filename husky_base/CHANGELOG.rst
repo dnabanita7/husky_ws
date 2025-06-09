@@ -2,32 +2,59 @@
 Changelog for package husky_base
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.4.13 (2022-11-25)
--------------------
-
-0.4.12 (2022-01-17)
--------------------
-
-0.4.11 (2022-01-14)
--------------------
-
-0.4.10 (2021-07-18)
--------------------
-
-0.4.9 (2021-07-15)
+1.0.8 (2022-05-19)
 ------------------
 
-0.4.8 (2021-04-01)
+1.0.7 (2022-05-19)
+------------------
+* Renamed all launch files to *.launch.py.
+* Contributors: Tony Baltovski
+
+1.0.6 (2022-05-18)
+------------------
+* Added searching for left and right joints rather than assuming order.
+* Contributors: Tony Baltovski
+
+1.0.5 (2022-05-05)
+------------------
+* Split teleop launch into two files since simulation doesn't need actual joystick and will spam warmings.
+* [husky_base] Fixed spawner.py bug.
+* [husky_base] Added missing includes for base_launch.py.
+* Revamped tele-op launch.
+* Fix chnaged dependency in rolling.
+* Contributors: Denis Štogl, Tony Baltovski
+
+1.0.4 (2022-03-15)
+------------------
+* Merge pull request `#191 <https://github.com/husky/husky/issues/191>`_ from StoglRobotics-forks/gazebo-sim-integration-fixes
+  Gazebo sim integration fixes
+* Contributors: Tony Baltovski
+
+1.0.3 (2021-11-30)
+------------------
+* [husky_base] Switched Boost static assert to C++ standard library.
+* Contributors: Tony Baltovski
+
+1.0.2 (2021-11-16)
+------------------
+* Removed unused parameters.
+* [husky_base] Removed duplicate node in launch.
+* Contributors: Tony Baltovski
+
+1.0.1 (2021-11-12)
 ------------------
 
-0.4.7 (2021-03-16)
+1.0.0 (2021-11-07)
 ------------------
-
-0.4.6 (2021-03-09)
-------------------
-
-0.4.5 (2020-10-01)
-------------------
+* Initial Gazebo Classic changes.
+* Updates to use ros2_control.
+* [husky_base] Fixed comparison warnings.
+* [husky_base] Fixed logging variable order.
+* [husky_base] Populated hardware states and removed joints struct.
+* Initial attempt at ros2_control.
+* [husky_base] Updated horizon_legacy library for C++11.
+* [husky_base] Linting changes to horizon_legacy library.
+* Contributors: Tony Baltovski
 
 0.4.4 (2020-08-13)
 ------------------

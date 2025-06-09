@@ -1,3 +1,6 @@
+# Husky A200
+Dockerized ROS2 Humble and Gazebo Garden packages to operate the RRC husky A200.
+
 # Usage Instructions
 
 ### Prerequisites
@@ -28,9 +31,6 @@
   ```bash
   echo "<YOUR_GITHUB_PAT>" | docker login ghcr.io -u <YOUR_GITHUB_USERID> --password-stdin
   ```
-
-- VSCode
-- Remote Development Extension by Microsoft (Inside VSCode)
   
 ### Setup Process
 - Create a folder for Husky development
@@ -56,9 +56,8 @@
    sudo chmod +777 /dev/ttyUSB0
    ros2 launch husky_base base.launch 
    ```
-   - Use ```sudo apt remove brltty``` if /dev/tty/USB0 port is not visible after connecting to Husky.
-
-   - Optionally, you can plug a joystick and teleop the robot.
+  - Optionally, you can plug a joystick and teleop the robot.
+   > Run ```sudo apt remove brltty``` if `/dev/tty/USB0` port is not visible after connecting to Husky.
 
 ## Docker
 

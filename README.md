@@ -2,7 +2,11 @@
 
 ### Prerequisites
 
-- Docker Installation
+
+- Ubuntu 22.04 or 24.04
+- VSCode
+- Remote Development Extension by Microsoft (Inside VSCode)
+- **Docker Installation**
   ```bash
   # Install Docker using convenience script
   curl -fsSL https://get.docker.com -o get-docker.sh
@@ -50,7 +54,7 @@
 1. Launch
    ```
    sudo chmod +777 /dev/ttyUSB0
-   roslaunch husky_base base.launch 
+   ros2 launch husky_base base.launch 
    ```
    - Use ```sudo apt remove brltty``` if /dev/tty/USB0 port is not visible after connecting to Husky.
 
@@ -60,7 +64,7 @@
 
 - To permanently add any ROS APT packages, list them in the rosPkgs.list file, then rebuild the Docker image using:
    ```
-   docker build -t ghcr.io/rtarun1/husky_base -f .devcontainer/Dockerfile .devcontainer
+   docker build -t ghcr.io/rtarun1/husky_base:<version> -f .devcontainer/Dockerfile .devcontainer
    ```
 - Always run ```sudo apt update``` inside the container before installing any additional packages.
   

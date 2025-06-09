@@ -2,42 +2,64 @@
 Changelog for package husky_control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.4.13 (2022-11-25)
--------------------
-* Fixed all scan topics to use front/scan.
-* Remove whitespace
-* Merge pull request `#217 <https://github.com/husky/husky/issues/217>`_ from husky/jyang-cpr-patch-1
-  Update DiffDriveController params
-* Contributors: Joey Yang, Tony Baltovski
-
-0.4.12 (2022-01-17)
--------------------
-
-0.4.11 (2022-01-14)
--------------------
-* Overwrite 'wheel_radius_multiplier' with env. var. HUSKY_WHEEL_MULTIPLIER
-* predict odom->base_link tf to current time
-* Contributors: Ebrahim Shahrivar, Luis Camero
-
-0.4.10 (2021-07-18)
--------------------
-
-0.4.9 (2021-07-15)
+1.0.8 (2022-05-19)
 ------------------
-* Remove the need to explicitly specify the laser_enabled, realsense_enabled, and urdf_extras arguments; use the envars to make it easier to simulate customized robots & use the moveit setup assistant.
-* Contributors: Chris Iverach-Brereton
+* [husky_control] Disabled imu_filter_madgwick for now.
+* Contributors: Tony Baltovski
 
-0.4.8 (2021-04-01)
+1.0.7 (2022-05-19)
+------------------
+* [husky_control] Fixed joy device param.
+* Renamed all launch files to *.launch.py.
+* Contributors: Tony Baltovski
+
+1.0.6 (2022-05-18)
+------------------
+* Added searching for left and right joints rather than assuming order.
+* Contributors: Tony Baltovski
+
+1.0.5 (2022-05-05)
+------------------
+* [husky_control] Fixed deprecated warnings and minor clean up.
+* Split teleop launch into two files since simulation doesn't need actual joystick and will spam warmings.
+* [husky_control] Removed dupilcate config.
+* [husky_control] Added IMU filter.
+* Revamped tele-op launch.
+* [husky_control] Cleaned up control_launch.py.
+* [husky_control] Re-added interactive_marker_twist_server and sorted depends in-order.
+* Contributors: Tony Baltovski
+
+1.0.4 (2022-03-15)
+------------------
+* Merge pull request `#191 <https://github.com/husky/husky/issues/191>`_ from StoglRobotics-forks/gazebo-sim-integration-fixes
+  Gazebo sim integration fixes
+* Contributors: Tony Baltovski
+
+1.0.3 (2021-11-30)
 ------------------
 
-0.4.7 (2021-03-16)
+1.0.2 (2021-11-16)
+------------------
+* Correct name of joint state broadcaster (controller) does not exist anymore.
+* Contributors: Denis Štogl
+
+1.0.1 (2021-11-12)
 ------------------
 
-0.4.6 (2021-03-09)
+1.0.0 (2021-11-07)
 ------------------
-
-0.4.5 (2020-10-01)
-------------------
+* Initial Gazebo Classic changes.
+* [husky_control] Added basic localization config.
+* [husky_control] Disabled interactive_marker_twist_server for now.
+* Removed missing packages in ROS2.
+* [husky_control] Removed multimaster_launch.
+* [husky_control] Added teleop launch.
+* [husky_control] Update control rate to 10Hz.
+* Updates to use ros2_control.
+* [husky_control] Updated CMakeLists.txt.
+* Initial attempt at ros2_control.
+* Add the link_name parameter to fix the interactive markers in rviz
+* Contributors: Chris Iverach-Brereton, Tony Baltovski
 
 0.4.4 (2020-08-13)
 ------------------

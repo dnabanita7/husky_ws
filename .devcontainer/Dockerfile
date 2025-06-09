@@ -1,4 +1,4 @@
-FROM ghcr.io/rtarun1/noetic:v1.0
+FROM ghcr.io/soham2560/humble-garden:latest
 
 # Add the following labels
 LABEL org.opencontainers.image.description="Husky"
@@ -7,6 +7,7 @@ LABEL org.opencontainers.image.vendor="Tarun R"
 LABEL org.opencontainers.image.source="https://github.com/rtarun1/husky_ws"
 LABEL maintainer="tarun.ramak@gmail.com"
 LABEL org.opencontainers.image.licenses="MIT"
+
 # handle default shell
 SHELL ["/bin/bash", "-c"]
 
@@ -25,12 +26,16 @@ RUN sudo apt-get update \
     libgl1-mesa-dev \
     libglu1-mesa-dev \
     at \
-    libaria-dev \
+    vim \
+    tmux \
+    nano \
+    tree \
     v4l-utils \
     xterm \
     && sudo apt-get autoremove -y \
     && sudo apt-get clean -y \
     && sudo rm -rf /var/lib/apt/lists/*
+
 
 # Build and install Realsense-SDK
 WORKDIR /home/container_user
@@ -43,6 +48,16 @@ RUN mkdir build && cd build \
     && cmake ../ \
     && sudo make uninstall && make clean && make && sudo make install 
 
+# Build and install Livox-SDK2
+WORKDIR /home/container_user
+RUN git clone https://github.com/rtarun1/Livox-SDK2.git 
+RUN cd Livox-SDK2 \
+    && mkdir build \
+    && cd build \
+    && cmake .. && make -j \
+    && sudo make install
+
+# ROS2 Packages
 COPY rosPkgs.list /tmp/rosPkgs.list
 RUN sudo apt-get update \
     && sudo apt-get -y install --no-install-recommends $(cat /tmp/rosPkgs.list) \

@@ -2,52 +2,23 @@
 Changelog for package husky_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.4.13 (2022-11-25)
--------------------
-* Add HUSKY_REALSENSE_TOPIC envar for choosing prefix namespace for all realsense topics
-* Update realsense launch file based on changes from realsense2_camera
-* Contributors: Joey Yang
-
-0.4.12 (2022-01-17)
--------------------
-
-0.4.11 (2022-01-14)
--------------------
-* Added Hokuyo UST10.
-* Fix the compute_calibration script so it uses the correct name for the magnetic field attribute. Fixes https://github.com/husky/husky/issues/182
-* Contributors: Chris Iverach-Brereton, Luis Camero
-
-0.4.10 (2021-07-18)
--------------------
-
-0.4.9 (2021-07-15)
-------------------
-* Fix the name of teh VLP16 launch file that gets included
-* Contributors: Chris Iverach-Brereton
-
-0.4.8 (2021-04-01)
-------------------
-* Add a missing colon to the install script
-* Contributors: Chris Iverach-Brereton
-
-0.4.7 (2021-03-16)
+1.0.8 (2022-05-19)
 ------------------
 
-0.4.6 (2021-03-09)
+1.0.7 (2022-05-19)
 ------------------
-* Add VLP16, secondary LMS1xx support (`#164 <https://github.com/husky/husky/issues/164>`_)
-  * Minimal refactor to add VLP16 + secondary LMS1xx support. Update defaults for the laser_enabled and realsense_enabled args to refer to the underlying envars to improve consistency when launching simulations. Modify the sensor bar to allow it to be positioned in the center by default, but with configurable xyz and rpy offsets
-  * Add the new run dependencies
-  * Remove the prefix's trailing underscore in the vlp16 mount to make it consistent. Fix an inconsistent envar for the sensor arch, add an arg to explicitly enable it, to stay internally consistent with the rest of Husky.
-  * Fix the envars; its just HUSKY_LMS1XX, not HUSKY_LASER_LMS1XX
-  * Revert to enabling the main laser by default in the simulations, add the velodyne_gazebo_plugins dependency
-* Remove the udev rules for the PS4 and Logitech controllers; those rules are provided either by the Clearpath ISO or by ds4drv as appropriate
-* Contributors: Chris I-B, Chris Iverach-Brereton
+* Renamed all launch files to *.launch.py.
+* Contributors: Tony Baltovski
 
-0.4.5 (2020-10-01)
+1.0.6 (2022-05-18)
 ------------------
-* Fix a bug where the UM7 and UM6 launch files don't work when installed to /etc/ros/*/ros.d; they fail to find the mag config files.
-* Contributors: Chris Iverach-Brereton
+
+1.0.5 (2022-05-05)
+------------------
+* Updated package versions for un-released packages.
+* [husky_bringup] Disabled gps bringup for now since nmea_navsat_driver isn't released.
+* Initial accessories launch file.
+* Contributors: Tony Baltovski
 
 0.4.4 (2020-08-13)
 ------------------

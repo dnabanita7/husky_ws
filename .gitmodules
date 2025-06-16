@@ -1,3 +1,6 @@
 [submodule "dependencies/realsense-ros"]
 	path = dependencies/realsense-ros
 	url = https://github.com/IntelRealSense/realsense-ros
+[submodule "dependencies/livox_ros_driver2"]
+	path = dependencies/livox_ros_driver2
+	url = https://github.com/rtarun1/livox_ros_driver2.git

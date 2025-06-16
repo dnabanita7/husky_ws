@@ -25,8 +25,8 @@ Dockerized ROS2 Humble and Gazebo Garden packages to operate the RRC husky A200.
   sudo systemctl is-enabled docker
   ```
 
- **Reboot before proceeding further**
-
+>[!IMPORTANT]
+>**Reboot before proceeding further**
 **GHCR Authentication** 
   ```bash
   echo "<YOUR_GITHUB_PAT>" | docker login ghcr.io -u <YOUR_GITHUB_USERID> --password-stdin
@@ -40,24 +40,49 @@ Dockerized ROS2 Humble and Gazebo Garden packages to operate the RRC husky A200.
     git clone https://github.com/RoboticsIIITH/husky_ws.git .
     # Open VSCode 
     code .
-    ```
-- To enter the container
+    ```  
+
+## How to Use
+- **Set ROS DOMAIN ID** to a random number between 0 to 101 inside the **devcontainer.json** file. Please make sure to read the [Docs.](https://docs.ros.org/en/eloquent/Tutorials/Configuring-ROS2-Environment.html#the-ros-domain-id-variable)
+  ```json
+  {
+    "containerEnv": {
+      "ROS_DOMAIN_ID": "42"  // Change this to your unique ID between (0 - 101)
+    }
+  }
+  ```
+- **Enter the container**
     - Open Command Pallete with `Ctrl+Shift+P`
-    - Select **Dev Containers: Reopen in Container**
-
-    - Use `Build WS` button to build workspace
+    - Select **Dev Containers: Rebuild and Reopen in Container**
+- **Build workspace and source**
   
+  - Use `Build WS` button to build workspace
+  - Which internally navigates to `husky_ws` directory and runs:
+    ```bash
+    colcon build --symlink-install && source install/setup.bash
+    ```
   
-
-## Start up the ROS
-
-1. Launch
+- **Launch husky**
    ```
    sudo chmod +777 /dev/ttyUSB0
    ros2 launch husky_base base.launch 
    ```
   - Optionally, you can plug a joystick and teleop the robot.
-   > Run ```sudo apt remove brltty``` if `/dev/tty/USB0` port is not visible after connecting to Husky.
+- **Camera** 
+  ```bash
+  ros2 launch realsense2_camera rs_launch.py 
+  ```
+- **3D LiDAR: Livox MID-360**
+ 1.  Create new network profile **"Livox"**
+ 2.  Configure static IP:
+      - **IP Address:** 192.168.1.50
+      - **Netmask:** 255.255.255.0
+   - Follow [Livox docs](https://github.com/rtarun1/livox_ros_driver2/tree/master?tab=readme-ov-file#4-lidar-config) for ROS2 setup.
+ >[!NOTE]
+ > - `rs_launch.py` doesn't have few features of the realsense by default, but you can enable (imu or pointcloud) it inside the launch file.
+ > - Run ```sudo apt remove brltty``` if `/dev/tty/USB0` port is not visible after connecting to Husky.
+
+ 
 
 ## Docker
 

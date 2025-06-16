@@ -37,7 +37,7 @@ Dockerized ROS2 Humble and Gazebo Garden packages to operate the RRC husky A200.
     ```bash 
     mkdir husky_ws && cd husky_ws
     # Clone the repo 
-    git clone https://github.com/RoboticsIIITH/husky_ws.git .
+    git clone https://github.com/RoboticsIIITH/husky_ws.git --recurse-submodules .
     # Open VSCode 
     code .
     ```  

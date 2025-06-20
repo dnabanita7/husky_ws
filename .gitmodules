@@ -1,0 +1,18 @@
+[submodule "elevation_mapping_d435i"]
+	path = elevation_mapping_d435i
+	url = https://github.com/SobhanGhayedzadeh/elevation-mapping-realsense-d435i.git
+[submodule "grid_map"]
+	path = grid_map
+	url = https://github.com/anybotics/grid_map.git
+[submodule "kindr"]
+	path = kindr
+	url = https://github.com/anybotics/kindr.git
+[submodule "kindr_ros"]
+	path = kindr_ros
+	url = https://github.com/anybotics/kindr_ros.git
+[submodule "message_logger"]
+	path = message_logger
+	url = https://github.com/anybotics/message_logger.git
+[submodule "any_node"]
+	path = any_node
+	url = https://github.com/anybotics/any_node.git

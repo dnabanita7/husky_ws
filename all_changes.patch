@@ -1,0 +1,38 @@
+diff --git a/livox_ros_driver2 b/livox_ros_driver2
+--- a/livox_ros_driver2
++++ b/livox_ros_driver2
+@@ -1 +1 @@
+-Subproject commit 6b9356cadf77084619ba406e6a0eb41163b08039
++Subproject commit 6b9356cadf77084619ba406e6a0eb41163b08039-dirty
+From 8c2cf8b756db7abcd78552a614621c7cd0578446 Mon Sep 17 00:00:00 2001
+From: Theyanesh E R <168980636+theyanesher@users.noreply.github.com>
+Date: Thu, 5 Jun 2025 12:30:12 +0530
+Subject: [PATCH] Update README.md
+
+---
+ README.md | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/README.md b/README.md
+index 3935a70..a9e52d3 100644
+--- a/README.md
++++ b/README.md
+@@ -52,6 +52,8 @@
+    sudo chmod +777 /dev/ttyUSB0
+    roslaunch husky_base base.launch 
+    ```
++   - Use ```sudo apt remove brltty``` if /dev/tty/USB0 port is not visible after connecting to Husky.
++
+    - Optionally, you can plug a joystick and teleop the robot.
+ 
+ ## Docker
+@@ -68,4 +70,4 @@
+ ### Credits
+ 
+ - This Docker setup was adapted from [Soham's repository](https://github.com/soham2560/DockerForROS2Development.git).
+-- If you use this repository for your project or publication, please consider citing or acknowledging [Tarun](https://github.com/rtarun1), [Soham](https://github.com/soham2560), [Official Husky](https://github.com/husky/husky).
+\ No newline at end of file
++- If you use this repository for your project or publication, please consider citing or acknowledging [Tarun](https://github.com/rtarun1), [Soham](https://github.com/soham2560), [Official Husky](https://github.com/husky/husky).
+-- 
+2.34.1
+

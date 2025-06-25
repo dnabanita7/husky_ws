@@ -1,3 +1,11 @@
 {
-    "cmake.sourceDirectory": "/home/tarun/husky/husky_base"
+    "cmake.sourceDirectory": "/home/tarun/husky/husky_base",
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/container_user/SuperGluePretrainedNetwork"
+    ],
+    "python.analysis.extraPaths": [
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/container_user/SuperGluePretrainedNetwork"
+    ]
 }
